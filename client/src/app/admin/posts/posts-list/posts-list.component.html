@@ -1,0 +1,17 @@
+<h1 class="header">
+    Posts
+    <button
+        class="btn btn-success"
+        (click)="goToAddPost()"
+    ><span class="glyphicon glyphicon-plus"></span>
+    </button>
+</h1>
+<div *ngIf="posts === 0"
+     class="alert alert-warning"
+>No posts yet.</div>
+<app-post-item
+        *ngFor="let post of posts  let i = index"
+        [post]="post"
+        [index]="i"
+        [@post_item]
+></app-post-item>

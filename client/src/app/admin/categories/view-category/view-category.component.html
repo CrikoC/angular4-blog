@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-xs-12">
+        <hr>
+    </div>
+</div>
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-8">
+                {{category.name}}.
+            </div>
+            <div class="pull-right col-xs-4">
+                <button
+                    class="btn btn-primary"
+                    (click)="goToEditCategory()"
+                ><span class="glyphicon glyphicon-edit"></span>
+                </button>
+                <button
+                    class="btn btn-danger"
+                    (click)="deleteCategory(index)"
+                ><span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        {{category.body}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<h1 class="header">
+    Categories
+    <button
+        class="btn btn-success"
+        (click)="goToAddCategory()"
+    ><span class="glyphicon glyphicon-plus"></span>
+    </button>
+</h1>
+<app-category-item
+        *ngFor="let category of categories  let i = index"
+        [category]="category"
+        [index]="i"
+        [@category_item]
+></app-category-item>

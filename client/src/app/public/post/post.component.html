@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="header">{{ post.name }}</h1>
+        <div class="well">
+            <span class="blockquote-reverse pull-right">
+                By: <strong>{{ post.author }}</strong>. Posted in:
+                <a
+                    style="cursor: pointer;"
+                    (click)="goToCategory()"
+                >{{ category.name }}</a>
+            </span>
+            <hr>
+            {{ post.body }}
+        </div>
+        <blockquote>
+            <span class="glyphicon glyphicon-calendar"></span> <strong>{{post.published_at | date:"fullDate" }}</strong>
+        </blockquote>
+    </div>
+</div>

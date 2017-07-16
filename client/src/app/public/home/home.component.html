@@ -1,0 +1,60 @@
+<div class="jumbotron">
+    <h1>Angular Blog</h1>
+    <p>
+        This is a simple blog app with user authentication.
+    </p>
+    <hr>
+    <div class="row">
+        <div class="col-sx-12 col-sm-6 col-md-6">
+            <h3>Front - End</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Angular 4
+                </li>
+                <li class="list-group-item">
+                    Bootstrap
+                </li>
+            </ul>
+        </div>
+        <div class="col-sx-12 col-sm-6 col-md-6">
+            <h3>Back - End</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Express
+                </li>
+                <li class="list-group-item">
+                    Node
+                </li>
+                <li class="list-group-item">
+                    MongoDB
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <hr>
+        <p>
+            <a class="btn btn-primary btn-lg" routerLink="login">
+                login
+            </a>
+            <a class="btn btn-primary btn-lg" routerLink="register">
+                Register
+            </a>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div
+        *ngFor="let category of categories let i=index"
+        class="col-xs-12 col-sm-6 col-md-4 col-lg-4"
+    >
+        <a [routerLink]="['category',i,category._id]">
+            <div class="btn btn-block btn-default" style="margin-bottom: 20px;">
+                <h3>{{category.name}}</h3>
+                <p>
+                    {{category.body}}
+                </p>
+            </div>
+        </a>
+    </div>
+</div>

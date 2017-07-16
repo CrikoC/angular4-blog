@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a routerLink="" class="navbar-brand">Angular Blog</a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-main">
+                    <ul class="nav navbar-nav">
+                        <li
+                            *ngFor="let category of categories let i = index"
+                            routerLinkActive="active"
+                        >
+                            <a [routerLink]="['category',i,category._id]">
+                                {{category.name}}
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li
+                            *ngIf="usersService.loggedIn()"
+                            routerLinkActive="active"
+                        ><a routerLink="profile">
+                                Profile
+                            </a>
+                        </li>
+                        <li
+                            *ngIf="usersService.loggedIn()"
+                            routerLinkActive="active"
+                        ><a routerLink="categories">Dashboard</a>
+                        </li>
+                        <li
+                            *ngIf="!usersService.loggedIn()"
+                            routerLinkActive="active"
+                        >
+                            <a routerLink="login">
+                                Login
+                            </a>
+                        </li>
+                        <li
+                            *ngIf="!usersService.loggedIn()"
+                            routerLinkActive="active">
+                            <a routerLink="register">
+                                Register
+                            </a>
+                        </li>
+                        <li
+                            *ngIf="usersService.loggedIn()"
+                        >
+                            <a
+                                href="#"
+                                (click) ="onLogout()"
+                            >logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="padding-top:70px;"></div>
