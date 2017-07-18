@@ -19,21 +19,30 @@
                     #name
                     formControlName="name"
                 >
-                <div class="help-block has-feedback"></div>
+                <div
+                    *ngIf="!addPostForm.get('name').valid && addPostForm.get('name').touched"
+                    class="help-block has-feedback alert alert-danger"
+                >Enter a name.
+                </div>
             </div>
             <div class="form-group has-feedback">
                 <label for="body">Body:</label>
-            <textarea
-                class="form-control"
-                id="body"
-                name="body"
-                #body
-                formControlName="body"
-                rows="10"
-            ></textarea>
-                <div class="help-block has-feedback"></div>
+                <textarea
+                    class="form-control"
+                    id="body"
+                    name="body"
+                    #body
+                    formControlName="body"
+                    rows="10"
+                ></textarea>
+                <div
+                    *ngIf="!addPostForm.get('body').valid && addPostForm.get('body').touched"
+                    class="help-block has-feedback alert alert-danger"
+                >You must enter a body for the post.
+                </div>
             </div>
         </div>
+
         <input
             type="hidden"
             class="form-control"

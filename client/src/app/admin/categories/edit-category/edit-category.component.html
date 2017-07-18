@@ -19,7 +19,11 @@
                     #name
                     formControlName="name"
                 >
-                <div class="help-block has-feedback"></div>
+                <div
+                    *ngIf="!editCategoryForm.get('name').valid && editCategoryForm.get('name').touched"
+                    class="help-block has-feedback alert alert-danger"
+                >Enter a name.
+                </div>
             </div>
             <div class="form-group has-feedback">
                 <label for="body">Body:</label>

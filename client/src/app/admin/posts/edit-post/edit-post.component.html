@@ -19,7 +19,11 @@
                     #name
                     formControlName="name"
                 >
-                <div class="help-block has-feedback"></div>
+                <div
+                    *ngIf="!editPostForm.get('name').valid && editPostForm.get('name').touched"
+                    class="help-block has-feedback alert alert-danger"
+                >Enter a name.
+                </div>
             </div>
             <div class="form-group has-feedback">
                 <label for="body">Body:</label>
@@ -31,7 +35,11 @@
                     formControlName="body"
                     rows="10"
                 ></textarea>
-                <div class="help-block has-feedback"></div>
+                <div
+                    *ngIf="!editPostForm.get('body').valid && editPostForm.get('body').touched"
+                    class="help-block has-feedback alert alert-danger"
+                >You must enter a body for the post.
+                </div>
             </div>
             <input
                 type="hidden"
